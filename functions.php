@@ -12,5 +12,3 @@ require get_template_directory() . '/functions/enqueues.php';
 require get_template_directory() . '/functions/action-hooks.php';
 require get_template_directory() . '/functions/navbar.php';
 require get_template_directory() . '/functions/search-widget.php';
-require get_template_directory() . '/functions/index-pagination.php';
-require get_template_directory() . '/functions/split-post-pagination.php';

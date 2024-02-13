@@ -9,8 +9,10 @@
   },
   "author": "Simon Padbury",
   "license": "Unlicence",
-  "dependencies": {},
   "devDependencies": {
-    "node-sass": "^5.0.0"
+    "node-sass": "^9.0.0"
+  },
+  "dependencies": {
+    "bootstrap": "^5.3.2"
   }
 }

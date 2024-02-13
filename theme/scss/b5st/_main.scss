@@ -1,0 +1,219 @@
+//MAKE SURE TO install bootstrap - npm i bootstrap
+
+
+//custom colors
+$spring-forest: #86cb3c;
+$atlantic-blue: #171a3d;
+$corfu-blue: #252749;
+
+//You must declare the font family in enqueues.php
+$font-family-primary: 'Inter', sans-serif;
+//if needed - secondary font $font-family-sans-serif: 'Roboto',sans-serif;
+
+
+
+//required
+@import "../../../node_modules/bootstrap/scss/_functions";
+@import "../../../node_modules/bootstrap/scss/_variables";
+@import "../../../node_modules/bootstrap/scss/_mixins";
+
+//registering the cutom colors
+$custom-colors: (
+        "spring-forest": #86cb3c,
+        "atlantic-blue": #171a3d,
+        "corfu-blue": #252749,
+);
+
+//adjusting bootstrap variables - colors
+$theme-colors: map-merge($theme-colors, $custom-colors);
+$theme-colors: map-remove($theme-colors, "info", "light", "dark", "secondary", "success", "info", "primary", "gray", "danger", "warning");
+$colors: map-remove($colors, "blue", "indigo", "purple", "pink", "red", "orange", "yellow", "green", "teal", "cyan", "body", "secondary", "tertiary", "quaternary", "light", "dark", "white", "black", "gray", "gray-dark", "primary", "success", "info", "warning", "danger", "light", "dark");
+
+//adjusting bootstrap variables - custom spacer sizing -> https://getbootstrap.com/docs/5.0/utilities/spacing/
+$spacer: 1rem; //16px
+$spacers: map-merge( $spacers, (
+        0: 0,
+        4: $spacer * 0.25,
+        8: $spacer * .5,
+        12: $spacer * .75,
+        16: $spacer,
+        20: $spacer * 1.25,
+        24: $spacer * 1.5,
+        32: $spacer * 2,
+        40: $spacer * 2.5,
+        48: $spacer * 3,
+        64: $spacer * 4,
+        80: $spacer * 5,
+        96: $spacer * 6,
+        128: $spacer * 8,
+        160: $spacer * 10,
+        224: $spacer * 14,
+        256: $spacer * 16,
+
+)
+);
+
+@import "../../../node_modules/bootstrap/scss/bootstrap";
+
+* {
+  font-family: $font-family-primary;
+  transition: 0.3s all ease-in-out;
+
+}
+
+//TYPOGRAPHY
+
+.display-large {
+  font-size: 52px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 56px;
+  letter-spacing: -1.04px;
+
+}
+
+.display-small {
+  font-size: 44px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 48px;
+  letter-spacing: -0.88px;
+
+}
+
+h1, h2 {
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 40px;
+  letter-spacing: -0.64px;
+  margin-bottom: 5px;
+}
+
+h3 {
+  font-size: 28px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 36px;
+  letter-spacing: -0.56px;
+  @include media-breakpoint-up(md) {
+    font-size: 32px;
+    line-height: 40px;
+    letter-spacing: -0.64px;
+  }
+}
+
+h4 {
+  font-family: Inter;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 32px;
+  letter-spacing: -0.48px;
+  @include media-breakpoint-up(md) {
+    font-size: 28px;
+    line-height: 36px;
+    letter-spacing: -0.56px;
+  }
+}
+
+h5 {
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 28px;
+  letter-spacing: -0.4px;
+  @include media-breakpoint-up(md) {
+    font-size: 24px;
+    line-height: 32px;
+    letter-spacing: -0.48px;
+  }
+}
+
+h6 {
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 24px;
+  letter-spacing: -0.36px;
+  @include media-breakpoint-up(md) {
+    font-size: 20px;
+    line-height: 28px;
+    letter-spacing: -0.4px;
+  }
+}
+
+.text-overline {
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 20px; /* 166.667% */
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  @include media-breakpoint-up(md) {
+    font-size: 14px;
+  }
+}
+
+
+//width classes
+
+.w-600 {
+  font-weight: 600;
+}
+.w-700 {
+  font-weight: 700;
+}
+.w-800 {
+  font-weight: 800;
+}
+
+
+
+
+
+body {                /* body - or any parent wrapper */
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+#section-hero {
+  flex: 1;
+  display: flex;
+  align-items: center;
+}
+
+//buttons
+.btn {
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 20px;
+  border-radius: 8px;
+  padding: 10px 16px;
+  font-style: normal;
+  border: none;
+  &.btn-learn-more {
+    border-radius: 3px;
+  }
+}
+
+// mobile manu burger icon styling
+.navbar-toggler {
+  border: none;
+  .navbar-toggler-icon {
+    background-image: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'><path stroke='rgba%28255, 255, 255, 1%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/></svg>");
+  }
+  &:focus {
+    outline: none;
+    box-shadow: none;
+  }
+}
+
+.logo {
+  max-width: 275px;
+}
+
+* {
+  //border: 1px solid red;
+}
